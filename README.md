@@ -15,26 +15,6 @@ TrustLens is a transparent dark pattern detector that analyzes websites to revea
 - Presents results through intuitive pattern cards and explanations
 - Designed for researchers, watchdogs, journalists, and curious users
 
-## Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/trustlens.git
-```
-
-2. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-## Usage
-
-Run the analysis on a website URL:
-```bash
-python trustlens.py --url https://example.com
-```
-
-The tool will output a report highlighting detected dark patterns and explanations.
 
 ## Contributing
 
