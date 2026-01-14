@@ -16,6 +16,12 @@ TrustLens is a transparent dark pattern detector that analyzes websites to revea
 - Designed for researchers, watchdogs, journalists, and curious users
 
 
+## Built with
+
+- **Backend:** FastAPI + Selenium  
+- **Frontend:** HTML, CSS, JavaScript
+
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and open a pull request with your improvements.
