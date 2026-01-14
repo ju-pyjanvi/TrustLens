@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrustLens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Dark Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
+        </svg>
+        <span class="logo-text">TrustLens</span>
+      </div>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active" data-view="home">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        </svg>
+        <div class="nav-text">
+          <span class="nav-title">Home</span>
+          <span class="nav-subtitle">Platform overview</span>
+        </div>
+      </a>
+      <a href="#" class="nav-item" data-view="analyzer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        <div class="nav-text">
+          <span class="nav-title">Analyzer Dashboard</span>
+          <span class="nav-subtitle">Pattern detection tool</span>
+        </div>
+      </a>
+      <a href="#" class="nav-item" data-view="library">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+        <div class="nav-text">
+          <span class="nav-title">Pattern Library</span>
+          <span class="nav-subtitle">Browse dark patterns</span>
+        </div>
+      </a>
+      <a href="#" class="nav-item" data-view="about">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <div class="nav-text">
+          <span class="nav-title">About</span>
+          <span class="nav-subtitle">Mission & team</span>
+        </div>
+      </a>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <div class="footer-brand">TrustLens</div>
+      <div class="footer-tagline">Transparency in digital ethics</div>
+      <div class="footer-copyright">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+        </svg>
+        TrustLens
+      </div>
+    </div>
+  </aside>
+
+  <!-- Top Header -->
+  <header class="top-header">
+    <nav class="header-nav">
+      <a href="#" data-view="home">Home</a>
+      <a href="#" data-view="analyzer" class="active">Analyzer</a>
+      <a href="#" data-view="library">Pattern Library</a>
+      <a href="#" data-view="about">About</a>
+    </nav>
+    <a href="#" class="header-cta" data-view="analyzer">Analyze Now</a>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Home View -->
+    <div id="homeView" class="view active">
+      <div class="hero-section">
+        <h1>See Through The Noise.</h1>
+        <p class="hero-tagline">Exposes the psychology websites hope you won't notice.</p>
+        <p class="hero-description">NLP-powered detection of manipulative patterns and persuasive tactics hiding in plain sight.</p>
+        <button onclick="navigateTo('analyzer')" class="cta-btn">Get Started</button>
+      </div>
+
+      <div class="features-section">
+        <div class="feature-item">
+          <div class="feature-number">01</div>
+          <div class="feature-content">
+            <h3>Pattern Detection</h3>
+            <p>Identifies urgency, scarcity, social proof, and pressure tactics in text</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-number">02</div>
+          <div class="feature-content">
+            <h3>Intent Analysis</h3>
+            <p>Breaks down persuasive intent by category with precise metrics</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-number">03</div>
+          <div class="feature-content">
+            <h3>Instant Results</h3>
+            <p>Real-time analysis with detailed explanations of detected patterns</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Analyzer View -->
+    <div id="analyzerView" class="view">
+      <div class="analyzer-layout">
+        <!-- Main Column -->
+        <div class="analyzer-main">
+          <div class="page-header">
+            <h1 class="page-title">Pattern Analyzer</h1>
+            <p class="page-subtitle">Detect manipulative design patterns in marketing copy and websites using advanced linguistic analysis</p>
+          </div>
+
+          <!-- Analysis Input Card -->
+          <div class="input-card">
+            <div class="input-card-header">
+              <h3>Analysis Input</h3>
+              <div class="input-toggle">
+                <button class="toggle-btn active" data-mode="text">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                  </svg>
+                  Text
+                </button>
+                <button class="toggle-btn" data-mode="url">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                  URL
+                </button>
+              </div>
+            </div>
+
+            <!-- Text Input -->
+            <div id="textInputContainer" class="input-container">
+              <textarea id="inputText" placeholder="Paste marketing copy, email content, or promotional text here..."></textarea>
+              <div class="input-footer">
+                <span class="input-hint">Minimum 50 characters recommended for accurate analysis</span>
+                <button onclick="analyzeText()" class="analyze-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                  </svg>
+                  Analyze
+                </button>
+              </div>
+            </div>
+
+            <!-- URL Input -->
+            <div id="urlInputContainer" class="input-container hidden">
+              <input type="url" id="inputUrl" placeholder="https://www.example.com/" />
+              <div class="input-footer">
+                <span class="input-hint">Enter a valid URL starting with http:// or https://</span>
+                <button onclick="analyzeUrl()" class="analyze-btn" id="urlAnalyzeBtn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                  </svg>
+                  Analyze
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Loading Progress -->
+          <div id="loadingCard" class="progress-card hidden">
+            <div class="progress-card-header">
+              <h3>Analysis in Progress</h3>
+              <span class="progress-step-count">1 of 4</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-bar-fill" style="width: 25%"></div>
+            </div>
+            <div class="progress-steps">
+              <div class="step active">
+                <span class="step-number">1</span>
+                <span class="step-text">Parsing content</span>
+                <svg class="step-spinner" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
+                </svg>
+              </div>
+              <div class="step">
+                <span class="step-number">2</span>
+                <span class="step-text">Identifying patterns</span>
+              </div>
+              <div class="step">
+                <span class="step-number">3</span>
+                <span class="step-text">Analyzing intent</span>
+              </div>
+              <div class="step">
+                <span class="step-number">4</span>
+                <span class="step-text">Generating report</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Intent Analysis Results -->
+          <div id="intentSection" class="results-card hidden">
+            <h3>Intent Analysis</h3>
+            <div id="intentCharts" class="intent-charts"></div>
+            <div class="methodology-note">
+              <strong>Analysis Methodology:</strong> Intent scores are calculated using natural language processing algorithms that analyze linguistic patterns, urgency indicators, scarcity tactics, and transparency markers. Higher manipulative scores indicate greater use of dark patterns and deceptive design elements.
+            </div>
+          </div>
+
+          <!-- Detected Patterns Results -->
+          <div id="resultsSection" class="results-card hidden">
+            <div class="results-card-header">
+              <h3>Detected Patterns</h3>
+              <span id="patternCount" class="pattern-count">0 patterns found</span>
+            </div>
+            <div id="patternCards" class="pattern-list"></div>
+          </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="analyzer-sidebar">
+          <!-- Quick Tips -->
+          <div class="sidebar-card">
+            <h4>Quick Tips</h4>
+            <div class="tip-item">
+              <svg class="tip-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+              <div>
+                <strong>Best Results</strong>
+                <p>Analyze complete marketing emails or landing page copy for comprehensive pattern detection.</p>
+              </div>
+            </div>
+            <div class="tip-item">
+              <svg class="tip-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+                <path d="M22 11.08V11a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <div>
+                <strong>Privacy First</strong>
+                <p>All analysis is performed client-side. Your data never leaves your browser.</p>
+              </div>
+            </div>
+            <div class="tip-item">
+              <svg class="tip-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <div>
+                <strong>Learn More</strong>
+                <p>Visit our <a href="#" data-view="library">Pattern Library</a> to understand each dark pattern category in detail.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Export Report -->
+          <div class="sidebar-card">
+            <h4>Export Report</h4>
+            <div class="export-item" onclick="exportPDF()">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <div>
+                <strong>PDF Report</strong>
+                <p>Comprehensive analysis document</p>
+              </div>
+              <svg class="export-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+            <div class="export-item" onclick="exportJSON()">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+              <div>
+                <strong>JSON Data</strong>
+                <p>Raw analysis data for integration</p>
+              </div>
+              <svg class="export-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+            <div class="export-item" onclick="exportCSV()">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="3" y1="15" x2="21" y2="15"></line>
+                <line x1="9" y1="3" x2="9" y2="21"></line>
+                <line x1="15" y1="3" x2="15" y2="21"></line>
+              </svg>
+              <div>
+                <strong>CSV Export</strong>
+                <p>Pattern data for spreadsheets</p>
+              </div>
+              <svg class="export-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+            <div class="export-note">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              Reports include detected patterns, intent analysis, and recommendations for ethical design improvements.
+            </div>
+          </div>
+
+          <!-- Analysis History -->
+          <div id="historyCard" class="sidebar-card hidden">
+            <div class="history-header">
+              <h4>Analysis History</h4>
+              <span id="historyCount">0 analyses</span>
+            </div>
+            <div id="historyList" class="history-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About View -->
+    <div id="aboutView" class="view">
+      <div class="about-hero">
+        <h1>About TrustLens</h1>
+        <p class="about-tagline">The digital equivalent of investigative journalism for the web—a beacon of clarity in an increasingly manipulative digital landscape.</p>
+      </div>
+      
+      <div class="mission-section">
+        <h2>Our Mission</h2>
+        <p>TrustLens represents the intersection of technology and ethics, bridging journalism, research, and consumer advocacy to expose manipulative design patterns in digital marketing.</p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+          </div>
+          <h3>Consumer Protection</h3>
+          <p>Empowering users to recognize and resist manipulative design patterns that exploit cognitive biases and undermine informed decision-making.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+            </svg>
+          </div>
+          <h3>Research Excellence</h3>
+          <p>Conducting rigorous analysis of digital persuasion techniques with academic precision and journalistic integrity to advance the field of digital ethics.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </div>
+          <h3>Transparency Advocacy</h3>
+          <p>Promoting honest digital communication by exposing deceptive practices and championing ethical design principles across the industry.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3>Community Building</h3>
+          <p>Fostering collaboration among researchers, advocates, and ethical practitioners to create a movement toward transparent digital experiences.</p>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <h2>Get in Touch</h2>
+        <p>Have questions, feedback, or want to collaborate? Reach out through any of the channels below.</p>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/janvi-upreti-a0745637b" target="_blank" class="contact-card">
+            <div class="contact-icon linkedin">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </div>
+            <div class="contact-info">
+              <strong>LinkedIn</strong>
+              <span>Connect with me</span>
+            </div>
+            <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+          <a href="mailto:janviupreti08@gmail.com" class="contact-card">
+            <div class="contact-icon email">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="contact-info">
+              <strong>Email</strong>
+              <span>janviupreti08@gmail.com</span>
+            </div>
+            <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pattern Library View -->
+    <div id="libraryView" class="view">
+      <div class="page-header">
+        <h1 class="page-title">Pattern Library</h1>
+        <p class="page-subtitle">Comprehensive database of dark patterns with real-world examples, severity ratings, and regulatory compliance information.</p>
+      </div>
+      
+      <div class="library-layout">
+        <!-- Filters Sidebar -->
+        <aside class="filters-sidebar">
+          <div class="filters-card">
+            <div class="filters-header">
+              <h3>Filters</h3>
+              <button class="reset-btn" onclick="resetFilters()">Reset All</button>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="filter-section">
+              <div class="filter-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                  <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                </svg>
+                Category
+              </div>
+              <label class="filter-option">
+                <input type="radio" name="category" value="all" checked onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                All Categories
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="category" value="urgency" onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                Urgency
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="category" value="scarcity" onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                Scarcity
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="category" value="social-proof" onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                Social Proof
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="category" value="misdirection" onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                Misdirection
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="category" value="obstruction" onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                Obstruction
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="category" value="forced-action" onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                Forced Action
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="category" value="sneaking" onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                Sneaking
+              </label>
+            </div>
+
+            <!-- Severity Filter -->
+            <div class="filter-section">
+              <div class="filter-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                  <line x1="12" y1="9" x2="12" y2="13"></line>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                Severity
+              </div>
+              <label class="filter-option">
+                <input type="radio" name="severity" value="all" checked onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                All Severities
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="severity" value="low" onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                Low
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="severity" value="medium" onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                Medium
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="severity" value="high" onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                High
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="severity" value="critical" onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                Critical
+              </label>
+            </div>
+
+            <!-- Industry Filter -->
+            <div class="filter-section">
+              <div class="filter-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+                Industry
+              </div>
+              <label class="filter-option">
+                <input type="radio" name="industry" value="all" checked onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                All Industries
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="industry" value="e-commerce" onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                E-commerce
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="industry" value="saas" onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                SaaS
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="industry" value="travel" onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                Travel
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="industry" value="finance" onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                Finance
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="industry" value="social-media" onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                Social Media
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="industry" value="news-media" onchange="filterPatterns()">
+                <span class="radio-custom"></span>
+                News & Media
+              </label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Pattern Cards -->
+        <div class="patterns-main">
+          <div class="patterns-count">Showing <span id="visibleCount">12</span> of <span id="totalCount">12</span> patterns</div>
+
+          <div id="patternsGrid" class="patterns-grid">
+            <!-- Countdown Timer Pressure -->
+            <div class="library-pattern-card" data-category="urgency" data-severity="high" data-industries="e-commerce,travel,saas">
+              <div class="pattern-image">
+                <img src="countdown.png" alt="Countdown Timer">
+                <button class="bookmark-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="pattern-content">
+                <h3>Countdown Timer Pressure</h3>
+                <div class="pattern-meta">
+                  <span class="meta-category">Urgency</span>
+                  <span class="meta-severity high">High</span>
+                </div>
+                <p class="pattern-desc">Creates artificial time pressure by displaying countdown timers that reset or extend, manipulating users into making hasty purchase decisions without proper consideration.</p>
+                <div class="pattern-example-box">
+                  <span class="example-label">Example:</span>
+                  <p class="example-text">"Only 2 hours left! This deal expires at midnight!"</p>
+                </div>
+                <div class="pattern-industries">
+                  <span>E-commerce</span>
+                  <span>Travel</span>
+                  <span>SaaS</span>
+                </div>
+                <button class="show-more-btn">Show More Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              </div>
+            </div>
+
+            <!-- Confirm-Shaming -->
+            <div class="library-pattern-card" data-category="misdirection" data-severity="medium" data-industries="e-commerce,saas,news-media">
+              <div class="pattern-image">
+                <img src="confirm shaming.png" alt="Confirm Shaming">
+                <button class="bookmark-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="pattern-content">
+                <h3>Confirm-Shaming</h3>
+                <div class="pattern-meta">
+                  <span class="meta-category">Misdirection</span>
+                  <span class="meta-severity medium">Medium</span>
+                </div>
+                <p class="pattern-desc">Uses guilt-inducing language in opt-out options to shame users into accepting unwanted offers or subscriptions.</p>
+                <div class="pattern-example-box">
+                  <span class="example-label">Example:</span>
+                  <p class="example-text">"No thanks, I don't want to save money (Continue without discount)"</p>
+                </div>
+                <div class="pattern-industries">
+                  <span>E-commerce</span>
+                  <span>SaaS</span>
+                  <span>News & Media</span>
+                </div>
+                <button class="show-more-btn">Show More Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              </div>
+            </div>
+
+            <!-- Roach Motel -->
+            <div class="library-pattern-card" data-category="obstruction" data-severity="critical" data-industries="saas,social-media,finance">
+              <div class="pattern-image">
+                <img src="roach.png" alt="Roach Motel">
+                <button class="bookmark-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="pattern-content">
+                <h3>Roach Motel</h3>
+                <div class="pattern-meta">
+                  <span class="meta-category">Obstruction</span>
+                  <span class="meta-severity critical">Critical</span>
+                </div>
+                <p class="pattern-desc">Makes it easy to sign up but extremely difficult to cancel or unsubscribe, trapping users in unwanted services through intentionally complex processes.</p>
+                <div class="pattern-example-box">
+                  <span class="example-label">Example:</span>
+                  <p class="example-text">"To cancel, please call our support line (available Mon-Fri, 9-5 EST only)"</p>
+                </div>
+                <div class="pattern-industries">
+                  <span>SaaS</span>
+                  <span>Social Media</span>
+                  <span>Finance</span>
+                </div>
+                <button class="show-more-btn">Show More Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              </div>
+            </div>
+
+            <!-- Hidden Subscription Costs -->
+            <div class="library-pattern-card" data-category="sneaking" data-severity="critical" data-industries="saas,news-media,finance">
+              <div class="pattern-image">
+                <img src="subscription.png" alt="Hidden Costs">
+                <button class="bookmark-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="pattern-content">
+                <h3>Hidden Subscription Costs</h3>
+                <div class="pattern-meta">
+                  <span class="meta-category">Sneaking</span>
+                  <span class="meta-severity critical">Critical</span>
+                </div>
+                <p class="pattern-desc">Conceals recurring charges or subscription terms in fine print, pre-checks subscription boxes, or uses confusing language to trick users into ongoing payments.</p>
+                <div class="pattern-example-box">
+                  <span class="example-label">Example:</span>
+                  <p class="example-text">"Start your free trial today! (Auto-renews at $99/month unless cancelled)"</p>
+                </div>
+                <div class="pattern-industries">
+                  <span>SaaS</span>
+                  <span>News & Media</span>
+                  <span>Finance</span>
+                </div>
+                <button class="show-more-btn">Show More Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              </div>
+            </div>
+
+            <!-- Fake Social Proof -->
+            <div class="library-pattern-card" data-category="social-proof" data-severity="high" data-industries="e-commerce,saas,social-media">
+              <div class="pattern-image">
+                <img src="review.png" alt="Fake Social Proof">
+                <button class="bookmark-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="pattern-content">
+                <h3>Fake Social Proof</h3>
+                <div class="pattern-meta">
+                  <span class="meta-category">Social Proof</span>
+                  <span class="meta-severity high">High</span>
+                </div>
+                <p class="pattern-desc">Displays fabricated user reviews, testimonials, or activity notifications to create false impression of popularity and trustworthiness.</p>
+                <div class="pattern-example-box">
+                  <span class="example-label">Example:</span>
+                  <p class="example-text">"John from New York just purchased this item 2 minutes ago!"</p>
+                </div>
+                <div class="pattern-industries">
+                  <span>E-commerce</span>
+                  <span>SaaS</span>
+                  <span>Social Media</span>
+                </div>
+                <button class="show-more-btn">Show More Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              </div>
+            </div>
+
+            <!-- Artificial Scarcity -->
+            <div class="library-pattern-card" data-category="scarcity" data-severity="high" data-industries="e-commerce,travel">
+              <div class="pattern-image">
+                <img src="mlh.png" alt="Artificial Scarcity">
+                <button class="bookmark-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="pattern-content">
+                <h3>Artificial Scarcity</h3>
+                <div class="pattern-meta">
+                  <span class="meta-category">Scarcity</span>
+                  <span class="meta-severity high">High</span>
+                </div>
+                <p class="pattern-desc">Creates false sense of limited availability by displaying misleading stock counts or availability messages to pressure immediate purchases.</p>
+                <div class="pattern-example-box">
+                  <span class="example-label">Example:</span>
+                  <p class="example-text">"Only 2 left in stock - order soon!"</p>
+                </div>
+                <div class="pattern-industries">
+                  <span>E-commerce</span>
+                  <span>Travel</span>
+                </div>
+                <button class="show-more-btn">Show More Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              </div>
+            </div>
+
+            <!-- Forced Continuity -->
+            <div class="library-pattern-card" data-category="forced-action" data-severity="critical" data-industries="saas,finance,news-media">
+              <div class="pattern-image">
+                <img src="ecetip.png" alt="Forced Continuity">
+                <button class="bookmark-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="pattern-content">
+                <h3>Forced Continuity</h3>
+                <div class="pattern-meta">
+                  <span class="meta-category">Forced Action</span>
+                  <span class="meta-severity critical">Critical</span>
+                </div>
+                <p class="pattern-desc">Automatically charges users after free trials end without clear notification, making it difficult to opt out before being billed.</p>
+                <div class="pattern-example-box">
+                  <span class="example-label">Example:</span>
+                  <p class="example-text">"Your free trial has ended. You have been charged $49.99."</p>
+                </div>
+                <div class="pattern-industries">
+                  <span>SaaS</span>
+                  <span>Finance</span>
+                  <span>News & Media</span>
+                </div>
+                <button class="show-more-btn">Show More Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              </div>
+            </div>
+
+            <!-- Bait and Switch -->
+            <div class="library-pattern-card" data-category="misdirection" data-severity="high" data-industries="e-commerce,travel,finance">
+              <div class="pattern-image">
+                <img src="final.png" alt="Bait and Switch">
+                <button class="bookmark-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="pattern-content">
+                <h3>Bait and Switch</h3>
+                <div class="pattern-meta">
+                  <span class="meta-category">Misdirection</span>
+                  <span class="meta-severity high">High</span>
+                </div>
+                <p class="pattern-desc">Advertises one product or price but substitutes it with a different, often more expensive option during checkout.</p>
+                <div class="pattern-example-box">
+                  <span class="example-label">Example:</span>
+                  <p class="example-text">"Price shown: $29. Final checkout: $49 (premium version required)"</p>
+                </div>
+                <div class="pattern-industries">
+                  <span>E-commerce</span>
+                  <span>Travel</span>
+                  <span>Finance</span>
+                </div>
+                <button class="show-more-btn">Show More Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              </div>
+            </div>
+
+            <!-- Privacy Zuckering -->
+            <div class="library-pattern-card" data-category="sneaking" data-severity="high" data-industries="social-media,saas">
+              <div class="pattern-image">
+                <img src="smth.png" alt="Privacy Zuckering">
+                <button class="bookmark-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="pattern-content">
+                <h3>Privacy Zuckering</h3>
+                <div class="pattern-meta">
+                  <span class="meta-category">Sneaking</span>
+                  <span class="meta-severity high">High</span>
+                </div>
+                <p class="pattern-desc">Tricks users into sharing more personal information than intended through confusing privacy settings or misleading consent flows.</p>
+                <div class="pattern-example-box">
+                  <span class="example-label">Example:</span>
+                  <p class="example-text">"To improve your experience, we'll share your data with partners (opt-out in settings)"</p>
+                </div>
+                <div class="pattern-industries">
+                  <span>Social Media</span>
+                  <span>SaaS</span>
+                </div>
+                <button class="show-more-btn">Show More Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              </div>
+            </div>
+
+            <!-- Disguised Ads -->
+            <div class="library-pattern-card" data-category="misdirection" data-severity="medium" data-industries="news-media,social-media">
+              <div class="pattern-image">
+                <img src="ss.png" alt="Disguised Ads">
+                <button class="bookmark-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="pattern-content">
+                <h3>Disguised Ads</h3>
+                <div class="pattern-meta">
+                  <span class="meta-category">Misdirection</span>
+                  <span class="meta-severity medium">Medium</span>
+                </div>
+                <p class="pattern-desc">Presents advertisements as regular content, making it difficult for users to distinguish between organic content and paid promotions.</p>
+                <div class="pattern-example-box">
+                  <span class="example-label">Example:</span>
+                  <p class="example-text">"Recommended for you" (actually a paid placement)</p>
+                </div>
+                <div class="pattern-industries">
+                  <span>News & Media</span>
+                  <span>Social Media</span>
+                </div>
+                <button class="show-more-btn">Show More Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              </div>
+            </div>
+
+            <!-- Trick Questions -->
+            <div class="library-pattern-card" data-category="misdirection" data-severity="medium" data-industries="e-commerce,saas,finance">
+              <div class="pattern-image">
+                <img src="final2.png" alt="Trick Questions">
+                <button class="bookmark-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="pattern-content">
+                <h3>Trick Questions</h3>
+                <div class="pattern-meta">
+                  <span class="meta-category">Misdirection</span>
+                  <span class="meta-severity medium">Medium</span>
+                </div>
+                <p class="pattern-desc">Uses confusing language, double negatives, or misleading phrasing in consent dialogs to trick users into unintended choices.</p>
+                <div class="pattern-example-box">
+                  <span class="example-label">Example:</span>
+                  <p class="example-text">"Uncheck this box if you prefer not to not receive emails"</p>
+                </div>
+                <div class="pattern-industries">
+                  <span>E-commerce</span>
+                  <span>SaaS</span>
+                  <span>Finance</span>
+                </div>
+                <button class="show-more-btn">Show More Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              </div>
+            </div>
+
+            <!-- Friend Spam -->
+            <div class="library-pattern-card" data-category="forced-action" data-severity="medium" data-industries="social-media,saas">
+              <div class="pattern-image">
+                <img src="friendscams.png" alt="Friend Spam">
+                <button class="bookmark-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="pattern-content">
+                <h3>Friend Spam</h3>
+                <div class="pattern-meta">
+                  <span class="meta-category">Forced Action</span>
+                  <span class="meta-severity medium">Medium</span>
+                </div>
+                <p class="pattern-desc">Requests access to contacts or social connections under misleading pretenses, then sends unauthorized messages or invitations.</p>
+                <div class="pattern-example-box">
+                  <span class="example-label">Example:</span>
+                  <p class="example-text">"Import contacts to find friends" (then sends spam invites to all)</p>
+                </div>
+                <div class="pattern-industries">
+                  <span>Social Media</span>
+                  <span>SaaS</span>
+                </div>
+                <button class="show-more-btn">Show More Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
