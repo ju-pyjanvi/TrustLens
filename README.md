@@ -230,7 +230,7 @@ For questions, feedback, or support, reach out:
 
 ## Live Demo
 
-- **Frontend:** https://ju-pyjanvi.github.io/
+- **Frontend:** https://ju-pyjanvi.github.io/TrustLens/
 - **Backend API Docs:** https://trustlens-cutx.onrender.com/docs
 
 ---
